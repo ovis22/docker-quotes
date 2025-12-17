@@ -40,41 +40,41 @@
 
 ### :bangbang: Prerequisites
 
-- Docker installed on your machine. <a href="https://docs.docker.com/get-docker/">Here</a> [web:1]
+- Docker installed on your machine. <a href="https://docs.docker.com/get-docker/">Here</a>
 
-docker --version
+```docker --version```
 
 ### :gear: Installation
 
 Clone the repository:
 
-git clone https://github.com/ovis22/docker-quotes.git
-cd docker-quotes
+```git clone https://github.com/ovis22/docker-quotes.git```
+```cd docker-quotes```
 
 ### :running: Run Locally
 
 Clone the project
-git clone https://github.com/ovis22/docker-quotes.git
+```git clone https://github.com/ovis22/docker-quotes.git```
 
 
 Go to the project directory
 
-cd docker-quotes
+```cd docker-quotes```
 
 
 Go to the Star Wars variant
 
-cd starwars
+```cd starwars```
 
 
 Build the Docker image
 
-docker build -t docker-quotes-starwars .
+```docker build -t docker-quotes-starwars .```
 
 
 Run the container
 
-docker run --rm docker-quotes-starwars
+```docker run --rm docker-quotes-starwars```
 
 
 ## :compass: Roadmap
@@ -114,6 +114,7 @@ Project Link: https://github.com/ovis22/docker-quotes
 
 ## :gem: Acknowledgements
 
-- [figlet](http://www.figlet.org/) [web:3]
-- [FIGlet fonts (Star Wars font)](http://www.jave.de/figlet/fonts.html) [web:4]
-- [Docker documentation](https://docs.docker.com/) [web:1]
+- [figlet](http://www.figlet.org/)
+- [FIGlet fonts (Star Wars font)](http://www.jave.de/figlet/fonts.html)
+- [Docker documentation](https://docs.docker.com/)
+- 
