@@ -2,8 +2,17 @@
 
 <h1>Dockerized random ASCII quote generators (Star Wars & Polish-inspired) using figlet.</h1>
 <p>docker-quotes is a small collection of Docker containers that print random quotes as ASCII art using figlet. It currently includes a Star Wars themed variant and a Polish song-inspired variant, each with its own Dockerfile and Bash script.</p>
-
-<h4>
+<p>
+  <img src="https://img.shields.io/github/languages/top/ovis22/docker-quotes" alt="Top language">
+      <a href="http://www.figlet.org/">
+    <img src="https://img.shields.io/badge/ASCII%20art-FIGlet-blueviolet?style=flat" alt="FIGlet"></a>
+        <a href="https://docker.com/">
+      <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff" alt="Docker"></a>
+      <a href="https://opensource.org/licenses/MIT">
+      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+    </a>
+  
+  </p>
   <a href="https://github.com/ovis22/docker-quotes/issues">Report Bug</a>
   <span> · </span>
   <a href="https://github.com/ovis22/docker-quotes/issues">Request Feature</a>
@@ -39,7 +48,7 @@
 ## :toolbox: Getting Started
 
 ### :bangbang: Prerequisites
-
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)](#)
 - Docker installed on your machine. <a href="https://docs.docker.com/get-docker/">Here</a>
 
 ```docker --version```
@@ -116,5 +125,4 @@ Project Link: https://github.com/ovis22/docker-quotes
 
 - [figlet](http://www.figlet.org/)
 - [FIGlet fonts (Star Wars font)](http://www.jave.de/figlet/fonts.html)
-- [Docker documentation](https://docs.docker.com/)
-- 
+- [Docker documentation](https://docs.docker.com/) 
