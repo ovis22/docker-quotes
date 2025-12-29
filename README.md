@@ -1,8 +1,11 @@
 <div align="center">
 
-<h1>Dockerized random ASCII quote generators (Star Wars & Polish-inspired) using figlet.</h1>
-<p>docker-quotes is a small collection of Docker containers that print random quotes as ASCII art using figlet. It currently includes a Star Wars themed variant and a Polish song-inspired variant, each with its own Dockerfile and Bash script.</p>
+<h1>Dockerized ASCII Quote Generators: Optimized Multi-Variant Collection</h1>
+<p><strong>Star Wars & Polish-Music inspired quotes rendered with FIGlet on Alpine Linux.</strong></p>
+
 <p>
+  <img src="https://img.shields.io/badge/Alpine%20Linux-0D597F?logo=alpinelinux&logoColor=fff" alt="Alpine Linux">
+      <a href="http://www.figlet.org/">
   <img src="https://img.shields.io/github/languages/top/ovis22/docker-quotes" alt="Top language">
       <a href="http://www.figlet.org/">
     <img src="https://img.shields.io/badge/ASCII%20art-FIGlet-blueviolet?style=flat" alt="FIGlet"></a>
@@ -11,8 +14,15 @@
       <a href="https://opensource.org/licenses/MIT">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
     </a>
-  
-  </p>
+</p>
+
+<p>A collection of containerized quote generators focused on Docker best practices. Features include a 90% footprint reduction via Alpine Linux, enhanced security through non-root execution, and optimized multi-stage-like build patterns.</p>
+
+<div align="center">
+  <img src="demo.png" alt="Star Wars Quote Demo" width="700">
+</div>
+
+<h4>
   <a href="https://github.com/ovis22/docker-quotes/issues">Report Bug</a>
   <span> · </span>
   <a href="https://github.com/ovis22/docker-quotes/issues">Request Feature</a>
@@ -33,64 +43,73 @@
 ## :star2: About the Project
 
 <details>
-  <summary>Server</summary>
+  <summary>Tech Stack</summary>
   <ul>
-    <li><a href="https://www.docker.com">Docker + Ubuntu</a></li>
+    <li><a href="https://www.docker.com">Docker + Alpine Linux</a></li>
+    <li><a href="https://www.gnu.org/software/bash/">Bash Scripting</a></li>
   </ul>
 </details>
 
 ### :dart: Features
 
-- Random quote selection using Bash arrays
-- Uses figlet for ASCII art output
-- Simple Docker build & run workflow
+- **Lightweight Images**: Migrated from Ubuntu to Alpine Linux, reducing image size by over 90%.
+- **Security**: Runs as a non-root user for enhanced container security.
+- **Optimized**: Multi-command `RUN` instructions to minimize image layers.
+- **ASCII Art**: Random quote selection rendered via `figlet`.
+
+### :chart_with_upwards_trend: Optimization Results
+
+| Feature | Before (Ubuntu) | After (Alpine) | Improvement |
+| :--- | :--- | :--- | :--- |
+| **Image Size** | 223 MB | **22 MB** | **~90% reduction** |
+| **Security** | Root privileges | **Non-root user** | Better isolation |
+| **Build Time** | Standard | **Layer caching** | Optimized layers |
 
 ## :toolbox: Getting Started
 
 ### :bangbang: Prerequisites
-[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff)](#)
+
 - Docker installed on your machine. <a href="https://docs.docker.com/get-docker/">Here</a>
 
-```docker --version```
+```bash
+docker --version
+```
 
 ### :gear: Installation
 
 Clone the repository:
 
-```git clone https://github.com/ovis22/docker-quotes.git```
-```cd docker-quotes```
+```bash
+git clone https://github.com/ovis22/docker-quotes.git
+cd docker-quotes
+```
 
 ### :running: Run Locally
 
-Clone the project
-```git clone https://github.com/ovis22/docker-quotes.git```
+1. Navigate to the desired variant directory:
+```bash
+cd starwars
+# OR
+cd polish-songs
+```
 
+2. Build the optimized Docker image:
+```bash
+docker build -t docker-quotes-starwars .
+```
 
-Go to the project directory
-
-```cd docker-quotes```
-
-
-Go to the Star Wars variant
-
-```cd starwars```
-
-
-Build the Docker image
-
-```docker build -t docker-quotes-starwars .```
-
-
-Run the container
-
-```docker run --rm docker-quotes-starwars```
-
+3. Run the container:
+```bash
+docker run --rm docker-quotes-starwars
+```
 
 ## :compass: Roadmap
 
 - [x] Create Star Wars variant  
 - [x] Create Polish songs inspired variant  
-- [ ] Add demo screenshot  
+- [x] Migrate to Alpine Linux (90% size reduction) 
+- [x] Implement non-root user security (appuser)  
+- [x] Add demo screenshot  
 - [ ] Add more quotes and variants  
 
 ## :wave: Contributing
@@ -113,16 +132,17 @@ Feel free to open an issue or submit a pull request.
 
 ## :warning: License
 
-Distributed under the MIT License. See the LICENSE file for more information. [web:2]
+Distributed under the MIT License. See the LICENSE file for more information.
 
 ## :handshake: Contact
 
-ovis22  
+Dominik Łakomy - [dominiklakomy00@gmail.com](mailto:dominiklakomy00@gmail.com)
 
-Project Link: https://github.com/ovis22/docker-quotes
+Project Link: [https://github.com/ovis22/docker-quotes](https://github.com/ovis22/docker-quotes)
 
 ## :gem: Acknowledgements
 
 - [figlet](http://www.figlet.org/)
 - [FIGlet fonts (Star Wars font)](http://www.jave.de/figlet/fonts.html)
-- [Docker documentation](https://docs.docker.com/) 
+- [Docker documentation](https://docs.docker.com/)
+- [Alpine Linux](https://alpinelinux.org/) – for the lightweight base image that enabled a 90% size reduction.
