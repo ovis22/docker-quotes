@@ -3,17 +3,16 @@
 <h1>Dockerized ASCII Quote Generators: Optimized Multi-Variant Collection</h1>
 <p><strong>Star Wars & Polish-Music inspired quotes rendered with FIGlet on Alpine Linux.</strong></p>
 
-<p>
-  <img src="https://img.shields.io/badge/Alpine%20Linux-0D597F?logo=alpinelinux&logoColor=fff" alt="Alpine Linux">
-      <a href="http://www.figlet.org/">
-  <img src="https://img.shields.io/github/languages/top/ovis22/docker-quotes" alt="Top language">
-      <a href="http://www.figlet.org/">
-    <img src="https://img.shields.io/badge/ASCII%20art-FIGlet-blueviolet?style=flat" alt="FIGlet"></a>
-        <a href="https://docker.com/">
+<p> 
+      <a href="https://www.alpinelinux.org/">
+      <img src="https://img.shields.io/badge/Alpine%20Linux-0D597F?logo=alpinelinux&logoColor=fff" alt="Alpine Linux"></a>
+      <img src="https://img.shields.io/github/languages/top/ovis22/docker-quotes" alt="Top language">
+      <a href="https://figlet.org/">
+      <img src="https://img.shields.io/badge/ASCII%20art-FIGlet-blueviolet?style=flat" alt="FIGlet"></a>
+      <a href="https://docker.com/">
       <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff" alt="Docker"></a>
       <a href="https://opensource.org/licenses/MIT">
-      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-    </a>
+      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 </p>
 
 <p>A collection of containerized quote generators focused on Docker best practices. Features include a 90% footprint reduction via Alpine Linux, enhanced security through non-root execution, and optimized multi-stage-like build patterns.</p>
