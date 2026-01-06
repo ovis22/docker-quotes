@@ -1,4 +1,7 @@
 .git
-.dockerignore
+.github
+.gitattributes
+docker-compose.yml
 README.md
+demo.png
 LICENSE

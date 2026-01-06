@@ -1,0 +1,30 @@
+services:
+  app-default:
+    container_name: quotes-default
+    restart: "no"
+    build: .
+    environment:
+      - QUOTES=Welcome to Docker Quotes;Keep it simple;Containers are cool;Build, Ship, and Run Any App, Anywhere
+      - FONT_NAME=standard
+
+  app-starwars:
+    container_name: quotes-starwars
+    restart: "no"
+    build: .
+    depends_on:
+      app-default:
+        condition: service_completed_successfully
+    environment:
+      - QUOTES=ITS A TRAP;I am your father;I find your lack of faith disturbing;May the Force be with you;Do or do not, there is no try;Use the Force, Luke
+      - FONT_NAME=starwars
+
+  app-polish-songs:
+    container_name: quotes-polish-songs
+    restart: "no"
+    build: .
+    depends_on:
+      app-starwars:
+       condition: service_completed_successfully
+    environment:
+      - QUOTES=Mniej niz zero;Dni ktorych nie znamy;Chociaz dookola wszyscy juz posneli;Wazne sa tylko te dni ktorych jeszcze nie znamy;Szklana pogoda;Autobiografia;Mydelko Fa
+      - FONT_NAME=Doom
