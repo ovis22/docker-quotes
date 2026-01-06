@@ -3,34 +3,17 @@
 <h1>Dockerized ASCII Quote Generators: Optimized Multi-Variant Collection</h1>
 <p><strong>Star Wars & Polish-Music inspired quotes rendered with FIGlet on Alpine Linux.</strong></p>
 
-<p>
-    <a href="https://github.com/ovis22/docker-quotes/actions">
-      <img src="https://github.com/ovis22/docker-quotes/actions/workflows/docker-image.yml/badge.svg" alt="Build Status">
-    </a>
-    <a href="https://github.com/ovis22/docker-quotes/commits/main">
-      <img src="https://img.shields.io/github/last-commit/ovis22/docker-quotes?color=blue&label=last%20update" alt="Last Commit">
-    </a>
-    <a href="https://www.docker.com/">
-      <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" alt="Docker">
-    </a>
-    <a href="https://docs.docker.com/compose/">
-      <img src="https://img.shields.io/badge/Docker_Compose-2496ED?logo=docker&logoColor=white" alt="Docker Compose">
-    </a>
-    <a href="https://www.alpinelinux.org/">
-      <img src="https://img.shields.io/badge/Alpine_Linux-0D597F?logo=alpinelinux&logoColor=white" alt="Alpine Linux">
-    </a>
-    <a href="https://www.gnu.org/software/bash/">
-      <img src="https://img.shields.io/badge/Bash_Scripting-4EAA25?logo=gnu-bash&logoColor=white" alt="Bash">
-    </a>
-    <a href="https://github.com/features/actions">
-      <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white" alt="GitHub Actions">
-    </a>
-    <img src="https://img.shields.io/badge/Image_Size-~22MB-success" alt="Image Size: ~22MB">
-    <img src="https://img.shields.io/badge/Security-Non--Root-blueviolet" alt="Security: Non-Root User">
-    <a href="https://opensource.org/licenses/MIT">
-      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-    </a>
-</p>
+[![Build Status](https://github.com/ovis22/docker-quotes/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ovis22/docker-quotes/actions)
+[![Last Commit](https://img.shields.io/github/last-commit/ovis22/docker-quotes?color=blue&label=last%20update)](https://github.com/ovis22/docker-quotes/commits/main)
+![Image Size](https://img.shields.io/badge/Image_Size-~22MB-success)
+![Security](https://img.shields.io/badge/Security-Non--Root-blueviolet)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+[![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-0D597F?logo=alpinelinux&logoColor=white)](https://www.alpinelinux.org/)
+[![Bash](https://img.shields.io/badge/Bash_Scripting-4EAA25?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)](https://github.com/features/actions)
 
 <p>A collection of containerized quote generators focused on Docker best practices. Features include a 90% footprint reduction via Alpine Linux, enhanced security through non-root execution, and a universal image architecture configurable via environment variables.</p>
 
