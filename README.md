@@ -77,7 +77,9 @@ Each container is customized via `docker-compose.yml`:
 ```yaml
 environment:
   - QUOTES=Quote 1;Quote 2;Quote 3  # Semicolon separated
+  - QUOTES=Quote 1;Quote 2;Quote 3  # Semicolon separated
   - FONT_NAME=starwars              # Matches filenames in /usr/share/figlet/
+  - APP_MODE=python                 # Options: 'bash' (default) or 'python'
   ```
 
 ### 2. The Sequence
@@ -118,6 +120,20 @@ docker-compose up --build
    - `quotes-polish-songs` (Doom font - Polish Music Classics)
 
 3. The containers will exit automatically after printing the message.
+
+### :tophat: Manual Mode Selection
+
+You can choose between the **Bash** and **Python** execution engines using the `APP_MODE` environment variable.
+
+**Run with Python:**
+```bash
+docker run --rm -e APP_MODE=python docker-quotes
+```
+
+**Run with Bash (Default):**
+```bash
+docker run --rm docker-quotes
+```
 
 ## :compass: Roadmap
 

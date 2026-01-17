@@ -4,6 +4,7 @@ services:
     restart: "no"
     build: .
     environment:
+      - APP_MODE=bash
       - QUOTES=Welcome to Docker Quotes;Keep it simple;Containers are cool;Build, Ship, and Run Any App, Anywhere
       - FONT_NAME=standard
 
@@ -15,6 +16,7 @@ services:
       app-default:
         condition: service_completed_successfully
     environment:
+      - APP_MODE=python
       - QUOTES=ITS A TRAP;I am your father;I find your lack of faith disturbing;May the Force be with you;Do or do not, there is no try;Use the Force, Luke
       - FONT_NAME=starwars
 
