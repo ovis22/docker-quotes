@@ -5,7 +5,7 @@
 
 [![Build Status](https://github.com/ovis22/docker-quotes/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ovis22/docker-quotes/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/ovis22/docker-quotes?color=blue&label=last%20update)](https://github.com/ovis22/docker-quotes/commits/main)
-![Image Size](https://img.shields.io/badge/Image_Size-~22MB-success)
+![Image Size](https://img.shields.io/badge/Image_Size-~80MB-yellow)
 ![Security](https://img.shields.io/badge/Security-Non--Root-blueviolet)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -13,9 +13,10 @@
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/)
 [![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-0D597F?logo=alpinelinux&logoColor=white)](https://www.alpinelinux.org/)
 [![Bash](https://img.shields.io/badge/Bash_Scripting-4EAA25?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)](https://github.com/features/actions)
 
-<p>A collection of containerized quote generators focused on Docker best practices. Features include a 90% footprint reduction via Alpine Linux, enhanced security through non-root execution, and a universal image architecture configurable via environment variables.</p>
+<p>A collection of containerized quote generators focused on Docker best practices. Features include a 64% footprint reduction via Alpine Linux, enhanced security through non-root execution, and a universal image architecture configurable via environment variables.</p>
 
 <div align="center">
   <img src="demo.png" alt="Star Wars Quote Demo" width="700">
@@ -48,13 +49,14 @@
     <li><a href="https://docs.docker.com/compose/">Docker Compose</a></li>
     <li><a href="https://github.com/features/actions">GitHub Actions (CI/CD)</a></li>
     <li><a href="https://www.gnu.org/software/bash/">Bash Scripting</a></li>
+    <li><a href="https://www.python.org/">Python 3</a></li>
   </ul>
 </details>
 
 ### :dart: Features
 
 - **Universal Image Architecture**: One generic `Dockerfile` powers all services. Logic is handled via environment variables.
-- **Lightweight**: Migrated from Ubuntu to Alpine Linux, reducing image size by over 90%.
+- **Lightweight**: Base Alpine image reduces footprint by ~90% (Bash-only) or ~64% (Hybrid Python) compared to standard Ubuntu images.
 - **Security**: Runs as a non-root user (`appuser`) for enhanced isolation.
 - **Orchestrated Sequence**: Uses `docker-compose` dependencies to ensure logs print sequentially (Default -> Star Wars -> Polish Songs) without overlap.
 - **Automated CI/CD**: GitHub Actions workflow builds and verifies the image on every push.
@@ -62,11 +64,13 @@
 
 ### :chart_with_upwards_trend: Optimization Results
 
-| Feature | Before (Ubuntu) | After (Alpine) | Improvement |
+| Variant | Environment | Image Size | Reduction vs Ubuntu |
 | :--- | :--- | :--- | :--- |
-| **Image Size** | 223 MB | **~22 MB** | **~90% reduction** |
-| **Security** | Root privileges | **Non-root user** | Better isolation |
-| **Maintenance** | Multiple Dockerfiles | **Single Dockerfile** | DRY Principle |
+| **Original** | Ubuntu (Default) | 223 MB | - |
+| **Optimized** | **Alpine (Bash only)** | **~22 MB** | **~90% reduction** |
+| **Current** | Alpine (Hybrid + Python) | ~80 MB | ~64% reduction |
+
+> **Note:** The current image includes Python runtime support, increasing size from ~22MB to ~80MB, but enabling advanced scripting logic while remaining significantly smaller than standard images.
 
 ## :gear: How it Works
 
@@ -76,7 +80,6 @@ The project uses a single image (`docker-quotes:latest`) instantiated 3 times wi
 Each container is customized via `docker-compose.yml`:
 ```yaml
 environment:
-  - QUOTES=Quote 1;Quote 2;Quote 3  # Semicolon separated
   - QUOTES=Quote 1;Quote 2;Quote 3  # Semicolon separated
   - FONT_NAME=starwars              # Matches filenames in /usr/share/figlet/
   - APP_MODE=python                 # Options: 'bash' (default) or 'python'
@@ -146,6 +149,7 @@ docker run --rm docker-quotes
 - [x] Add GitHub Actions CI/CD pipeline
 - [x] Add demo screenshot
 - [x] Add more quotes and variants  
+- [x] Implement Hybrid Architecture (Bash + Python support)
 
 ## :wave: Contributing
 
