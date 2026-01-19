@@ -184,7 +184,7 @@ Project Link: [https://github.com/ovis22/docker-quotes](https://github.com/ovis2
 
 ## :gem: Acknowledgements
 
-- [Typecraft](https://www.youtube.com/@typecraft) - Created the "Docker for Newbs" tutorials that inspired the initial Star Wars concept.
+- [Typecraft](https://www.youtube.com/@typecraft_dev) - Created the "Docker for Newbs" tutorials that inspired the initial Star Wars concept.
 - [figlet](http://www.figlet.org/)
 - [xero/figlet-fonts)](https://github.com/xero/figlet-fonts) - Collection used as the source for custom fonts (Star Wars & Doom).
 - [Docker documentation](https://docs.docker.com/)
