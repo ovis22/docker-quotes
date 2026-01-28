@@ -14,6 +14,7 @@
 [![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-0D597F?logo=alpinelinux&logoColor=white)](https://www.alpinelinux.org/)
 [![Bash](https://img.shields.io/badge/Bash_Scripting-4EAA25?logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Lolcat](https://img.shields.io/badge/Lolcat-Rainbow-ff69b4?logo=linux&logoColor=white)](https://github.com/busyloop/lolcat)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)](https://github.com/features/actions)
 
 <p>A collection of containerized quote generators focused on Docker best practices. Features include a 64% footprint reduction via Alpine Linux, enhanced security through non-root execution, and a universal image architecture configurable via environment variables.</p>
@@ -35,6 +36,7 @@
 - [About the Project](#star2-about-the-project)
 - [How it Works](#gear-how-it-works)
 - [Roadmap](#compass-roadmap)
+- [Changelog](CHANGELOG.md)
 - [Contributing](#wave-contributing)
 - [FAQ](#grey_question-faq)
 - [License](#warning-license)
@@ -59,8 +61,10 @@
 - **Lightweight**: Base Alpine image reduces footprint by ~90% (Bash-only) or ~64% (Hybrid Python) compared to standard Ubuntu images.
 - **Security**: Runs as a non-root user (`appuser`) for enhanced isolation.
 - **Orchestrated Sequence**: Uses `docker-compose` dependencies to ensure logs print sequentially (Default -> Star Wars -> Polish Songs) without overlap.
-- **Automated CI/CD**: GitHub Actions workflow builds and verifies the image on every push.
+- **Automated CI/CD**: GitHub Actions workflow builds and verifies the image on every push (Multi-Arch).
 - **Dynamic Fonts**: Dockerfile downloads multiple FIGlet fonts (`starwars`, `Doom`) in a single optimized layer.
+- **Rainbow Output**: Automatic colorization via `lolcat` for a vibrant terminal experience.
+- **Multi-Architecture**: Native compatibility for `amd64` and `arm64` (Apple Silicon/Intel/AMD).
 
 ### :chart_with_upwards_trend: Optimization Results
 
@@ -68,13 +72,13 @@
 | :--- | :--- | :--- | :--- |
 | **Original** | Ubuntu (Default) | 223 MB | - |
 | **Optimized** | **Alpine (Bash only)** | **~22 MB** | **~90% reduction** |
-| **Current** | Alpine (Hybrid + Python) | ~80 MB | ~64% reduction |
+| **Current (v1.1.0)** | Alpine (Hybrid + Python + Lolcat) | ~80 MB | ~64% reduction |
 
 > **Note:** The current image includes Python runtime support, increasing size from ~22MB to ~80MB, but enabling advanced scripting logic while remaining significantly smaller than standard images.
 
 ## :gear: How it Works
 
-The project uses a single image (`docker-quotes:latest`) instantiated 3 times with different configurations.
+The project uses a single image (`docker-quotes:v1.1.0`) instantiated 3 times with different configurations.
 
 ### 1. The Configuration
 Each container is customized via `docker-compose.yml`:
@@ -96,6 +100,7 @@ To keep the terminal output clean, services are chained using `depends_on`:
 ### :bangbang: Prerequisites
 
 - Docker installed on your machine. <a href="https://docs.docker.com/get-docker/">Here</a>
+- **System**: Compatible with `linux/amd64` (Intel/AMD) and `linux/arm64` (Apple Silicon/RPi).
 
 ```bash
 docker --version
@@ -130,12 +135,12 @@ You can choose between the **Bash** and **Python** execution engines using the `
 
 **Run with Python:**
 ```bash
-docker run --rm -e APP_MODE=python docker-quotes
+docker run --rm -e APP_MODE=python ovis22/docker-quotes:v1.1.0
 ```
 
 **Run with Bash (Default):**
 ```bash
-docker run --rm docker-quotes
+docker run --rm ovis22/docker-quotes:v1.1.0
 ```
 
 ## :compass: Roadmap
@@ -150,6 +155,8 @@ docker run --rm docker-quotes
 - [x] Add demo screenshot
 - [x] Add more quotes and variants  
 - [x] Implement Hybrid Architecture (Bash + Python support)
+- [x] Add `lolcat` colorization
+- [x] Support Multi-Architecture builds (amd64/arm64)
 
 ## :wave: Contributing
 
@@ -185,6 +192,7 @@ Project Link: [https://github.com/ovis22/docker-quotes](https://github.com/ovis2
 ## :gem: Acknowledgements
 
 - [Typecraft](https://www.youtube.com/@typecraft_dev) - Created the "Docker for Newbs" tutorials that inspired the initial Star Wars concept.
+- [lolcat](https://github.com/busyloop/lolcat) - Used for the rainbow terminal effect.
 - [figlet](http://www.figlet.org/)
 - [xero/figlet-fonts)](https://github.com/xero/figlet-fonts) - Collection used as the source for custom fonts (Star Wars & Doom).
 - [Docker documentation](https://docs.docker.com/)

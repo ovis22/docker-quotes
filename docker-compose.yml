@@ -1,5 +1,6 @@
 services:
   app-default:
+    image: ovis22/docker-quotes:v1.1.0
     container_name: quotes-default
     restart: "no"
     build: .
@@ -9,6 +10,7 @@ services:
       - FONT_NAME=standard
 
   app-starwars:
+    image: ovis22/docker-quotes:v1.1.0
     container_name: quotes-starwars
     restart: "no"
     build: .
@@ -21,6 +23,7 @@ services:
       - FONT_NAME=starwars
 
   app-polish-songs:
+    image: ovis22/docker-quotes:v1.1.0
     container_name: quotes-polish-songs
     restart: "no"
     build: .

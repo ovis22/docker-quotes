@@ -3,6 +3,7 @@
 .gitattributes
 docker-compose.yml
 README.md
+CHANGELOG.md
 demo.png
 LICENSE
 DOCKERHUB_README.md

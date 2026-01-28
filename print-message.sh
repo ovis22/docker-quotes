@@ -21,5 +21,11 @@ SELECTED_PHRASE="${PHRASES[$RANDOM_INDEX]}"
 echo "DEBUG: Font=$FONT_NAME"
 echo "DEBUG: Selected Quote=$SELECTED_PHRASE"
 
-# Generate ASCII art
-figlet -f "$FONT_NAME" "$SELECTED_PHRASE"
+# Generate ASCII art with a check for lolcat
+if command -v lolcat >/dev/null 2>&1; then
+    # Use lolcat for rainbow effect
+    figlet -f "$FONT_NAME" "$SELECTED_PHRASE" | lolcat
+else
+    # Fallback to standard white text if lolcat is missing
+    figlet -f "$FONT_NAME" "$SELECTED_PHRASE"
+fi

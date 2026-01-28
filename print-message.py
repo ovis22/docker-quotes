@@ -24,11 +24,21 @@ def main():
     print(f"DEBUG: Font={font_name}")
     print(f"DEBUG: Selected Quote={selected_phrase}")
 
-    # Generate ASCII art using figlet
+    # Check if lolcat exists (our "rainbow check")
+    lolcat_installed = subprocess.run(["which", "lolcat"], capture_output=True).returncode == 0
+
     try:
-        subprocess.run(["figlet", "-f", font_name, selected_phrase], check=True)
+        if lolcat_installed:
+            # The "Hacker" way: pipe figlet output to lolcat
+            p1 = subprocess.Popen(["figlet", "-f", font_name, selected_phrase], stdout=subprocess.PIPE)
+            subprocess.run(["lolcat"], stdin=p1.stdout)
+            p1.stdout.close()
+        else:
+            # Fallback to standard figlet
+            subprocess.run(["figlet", "-f", font_name, selected_phrase])
+            
     except FileNotFoundError:
-        print("Error: figlet not found. Install it first.")
+        print("Error: Essential tools missing!")
         sys.exit(1)
     
 if __name__ == "__main__":
